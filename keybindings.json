@@ -1,0 +1,281 @@
+[
+    // editor group management
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.focusPreviousGroup"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-editor.action.startFindReplaceAction",
+        "when": "editorFocus || editorIsOpen"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.focusNextGroup"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.newGroupRight",
+                "workbench.action.quickOpen"
+            ]
+        }
+    },
+    {
+        "key": "ctrl+shift+m",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.focusLastEditorGroup",
+                "workbench.action.moveActiveEditorGroupLeft"
+            ]
+        }
+    },
+    {
+        "key": "ctrl+shift+j",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.newGroupRight",
+                "foam-vscode.open-daily-note",
+            ]
+        }
+    },
+    {
+        "key": "ctrl+w",
+        "command": "workbench.action.closeEditorsAndGroup"
+    },
+    // sidebar
+    {
+        "key": "ctrl+e",
+        "command": "-workbench.action.quickOpen"
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.files.action.focusFilesExplorer",
+    },
+    {
+        "key": "ctrl+e",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "filesExplorerFocus"
+    },
+    {
+        "key": "a",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+a",
+        "command": "explorer.newFolder",
+        "when": "filesExplorerFocus  && !inputFocus"
+    },
+    // better multiselect (skip a multiselection)
+    {
+        "key": "ctrl+n",
+        "command": "editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+k ctrl+d",
+        "command": "-editor.action.moveSelectionToNextFindMatch",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
+    },
+    // ctrl+, is open terminal
+    {
+        "key": "ctrl+,",
+        "command": "workbench.action.terminal.toggleTerminal",
+    },
+    {
+        "key": "ctrl+,",
+        "command": "-workbench.action.openSettings"
+    },
+    // {
+    //     "key": "ctrl+,",
+    //     "command": "workbench.action.terminal.newWithCwd",
+    //     "args": {
+    //         "cwd": "${fileDirname}"
+    //     },
+    //     "when": "!terminalFocus"
+    // },
+    // {
+    //     "key": "ctrl+,",
+    //     "command": "workbench.action.terminal.toggleTerminal",
+    //     "when": "terminalFocus"
+    // },
+    // markdown checkboxes
+    {
+        "key": "ctrl+shift+enter",
+        "command": "-markdown-checkbox.markCheckbox",
+        "when": "editorTextFocus && resourceLangId == 'markdown'"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "-editor.action.insertLineAfter",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+enter",
+        "command": "markdown-checkbox.markCheckbox"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+m",
+        "command": "runCommands",
+        "when": "editorTextFocus && resourceLangId == 'markdown'",
+        "args": {
+            "commands": [
+                "markdown-checkbox.createCheckbox",
+                "extension.vim_insert"
+            ]
+        }
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command": "-markdown-checkbox.createCheckbox",
+        "when": "editorTextFocus && resourceLangId == 'markdown'"
+    },
+    // open link
+    {
+        "key": "ctrl+o",
+        "command": "editor.action.openLink"
+    },
+    // insert date and time
+    {
+        "key": "ctrl+i",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "editor.action.insertSnippet",
+                    "args": {
+                        "name": "Now"
+                    }
+                },
+                {
+                    "command": "extension.vim_insert",
+                },
+            ]
+        },
+        "when": "vim.mode == Normal"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "editor.action.insertSnippet",
+        "args": {
+            "name": "Now"
+        },
+        "when": "vim.mode == Insert"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "editor.action.insertSnippet",
+                    "args": {
+                        "name": "_Now"
+                    }
+                },
+                {
+                    "command": "extension.vim_escape",
+                },
+            ]
+        },
+        "when": "vim.mode != Normal && vim.mode != Insert"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "editor.action.insertSnippet",
+                    "args": {
+                        "name": "Today"
+                    }
+                },
+                {
+                    "command": "extension.vim_insert",
+                },
+            ]
+        },
+        "when": "vim.mode == Normal"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "editor.action.insertSnippet",
+        "args": {
+            "name": "Today"
+        },
+        "when": "vim.mode == Insert"
+    },
+    {
+        "key": "ctrl+shift+i",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "editor.action.insertSnippet",
+                    "args": {
+                        "name": "_Today"
+                    }
+                },
+                {
+                    "command": "extension.vim_escape",
+                },
+            ]
+        },
+        "when": "vim.mode != Normal && vim.mode != Insert"
+    },
+    // disable markdown preview
+    {
+        "key": "ctrl+shift+v",
+        "command": "-markdown.showPreview",
+        "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    // forward and backward navigation
+    {
+        "key": "alt+h",
+        "command": "-foam-vscode.open-daily-note-for-date"
+    },
+    {
+        "key": "alt+h",
+        "command": "workbench.action.navigateBack",
+        "when": "canNavigateBack"
+    },
+    {
+        "key": "alt+left",
+        "command": "-workbench.action.navigateBack",
+        "when": "canNavigateBack"
+    },
+    {
+        "key": "alt+l",
+        "command": "workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    },
+    {
+        "key": "alt+right",
+        "command": "-workbench.action.navigateForward",
+        "when": "canNavigateForward"
+    },
+    {
+        "key": "ctrl+shift+k",
+        "command": "-editor.action.deleteLines",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "search-folders.searchFolders"
+    },
+]
