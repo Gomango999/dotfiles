@@ -1,5 +1,4 @@
 " Essentials
-set number relativenumber
 syntax on
 set autoindent 
 set tabstop=4
@@ -36,46 +35,21 @@ nnoremap <leader>d "*d
 nnoremap <leader>dd "*dd
 nnoremap <leader>D "*D
 vnoremap <leader>d "*d
-" find and replace
-nnoremap <leader>s :s//g<left><left>
-nnoremap <leader><s-s> :%s//g<left><left>
-vnoremap <leader>s :s//g<left><left>
 " tabs
 nnoremap <s-tab> <<
 nnoremap <tab> >>
 inoremap <s-tab> <c-d>
 " remove highlighting
 nnoremap <esc><esc> :noh <cr>
-" re-source vimrc
-nnoremap <s-r> :so ~/.vimrc<cr>:noh<cr>
 
 " Navigation
 set whichwrap+=<,>,h,l[,]		" makes pressing h/l at the end of the line go to next visual line
 set backspace=indent,eol,start 	" allows backspacing over tab/eol/start
 set virtualedit+=onemore 		" make going to end go one more onto the new line
-nnoremap H 0
-nnoremap L $
-nnoremap K {
-nnoremap J }
-
-" Tab Navigation
-noremap <leader>e<space> :tabedit 
-noremap <leader><left> :tabprevious<cr>
-noremap <leader><right> :tabnext<cr>
-noremap <leader>1 1gt
-noremap <leader>2 2gt
-noremap <leader>3 3gt
-noremap <leader>4 4gt
-noremap <leader>5 5gt
-noremap <leader>6 6gt
-noremap <leader>7 7gt
-noremap <leader>8 8gt
-noremap <leader>9 9gt
-noremap <leader>0 10gt
-
-" Splits
-set splitbelow
-set splitright
+nnoremap H 12h
+nnoremap L 12l
+nnoremap K 5j
+nnoremap J 5k
 
 "  Plugins
 call plug#begin('~/.vim/plugged')
