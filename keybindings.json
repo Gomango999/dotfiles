@@ -24,6 +24,16 @@
         }
     },
     {
+        "key": "ctrl+shift+h",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                "workbench.action.newGroupLeft",
+                "workbench.action.quickOpen"
+            ]
+        }
+    },
+    {
         "key": "ctrl+shift+m",
         "command": "runCommands",
         "args": {
@@ -151,7 +161,7 @@
     },
     // insert date and time
     {
-        "key": "ctrl+i",
+        "key": "ctrl+y",
         "command": "runCommands",
         "args": {
             "commands": [
@@ -169,7 +179,7 @@
         "when": "vim.mode == Normal"
     },
     {
-        "key": "ctrl+i",
+        "key": "ctrl+y",
         "command": "editor.action.insertSnippet",
         "args": {
             "name": "Now"
@@ -177,7 +187,7 @@
         "when": "vim.mode == Insert"
     },
     {
-        "key": "ctrl+i",
+        "key": "ctrl+y",
         "command": "runCommands",
         "args": {
             "commands": [
@@ -195,7 +205,7 @@
         "when": "vim.mode != Normal && vim.mode != Insert"
     },
     {
-        "key": "ctrl+shift+i",
+        "key": "ctrl+shift+y",
         "command": "runCommands",
         "args": {
             "commands": [
@@ -213,7 +223,7 @@
         "when": "vim.mode == Normal"
     },
     {
-        "key": "ctrl+shift+i",
+        "key": "ctrl+shift+y",
         "command": "editor.action.insertSnippet",
         "args": {
             "name": "Today"
@@ -221,7 +231,7 @@
         "when": "vim.mode == Insert"
     },
     {
-        "key": "ctrl+shift+i",
+        "key": "ctrl+shift+y",
         "command": "runCommands",
         "args": {
             "commands": [
@@ -275,7 +285,83 @@
         "when": "textInputFocus && !editorReadonly"
     },
     {
-        "key": "ctrl+o",
-        "command": "search-folders.searchFolders"
+        "key": "shift+alt+n",
+        "command": "bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+k",
+        "command": "-bookmarks.toggle",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+j",
+        "command": "bookmarks.jumpToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+l",
+        "command": "-bookmarks.jumpToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+k",
+        "command": "bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+j",
+        "command": "-bookmarks.jumpToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+k",
+        "command": "-bookmarks.shrinkSelection",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+j",
+        "command": "-bookmarks.expandSelectionToPrevious",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+l",
+        "command": "-bookmarks.expandSelectionToNext",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+l",
+        "command": "editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+right",
+        "command": "-editor.action.smartSelect.expand",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+h",
+        "command": "editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+left",
+        "command": "-editor.action.smartSelect.shrink",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-workbench.action.chat.startVoiceChat",
+        "when": "chatIsEnabled && hasSpeechProvider && inChatInput && !chatSessionRequestInProgress && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress || chatIsEnabled && hasSpeechProvider && inlineChatFocused && !chatSessionRequestInProgress && !editorFocus && !notebookEditorFocused && !scopedVoiceChatGettingReady && !speechToTextInProgress"
+    },
+    {
+        "key": "ctrl+i",
+        "command": "-codeium.openCodeiumCommand",
+        "when": "codeium.commandEnabled && editorTextFocus && !inlineSuggestionsVisible"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-markdown.extension.editing.toggleBold",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
     },
 ]
